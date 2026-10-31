@@ -5,23 +5,22 @@ $cols = $_GET['cols'] ?? '';
 $showTable = false;
 $error = '';
 
-// Проверяем, была ли отправлена форма вообще
 $isSubmitted = isset($_GET['rows']) || isset($_GET['cols']);
 
 if ($isSubmitted) {
-    if ($rows === '' || $cols === '') {
-        $error = 'Заполните оба поля';
-    } elseif (!ctype_digit($rows) || !ctype_digit($cols)) {
-        $error = 'Введите только целые положительные числа';
-    } else {
-        $rowsInt = (int)$rows;
-        $colsInt = (int)$cols;
-        if ($rowsInt <= 0 || $colsInt <= 0) {
-            $error = 'Числа должны быть больше нуля';
-        } else {
-            $showTable = true;
-        }
-    }
+	if ($rows === '' || $cols === '') {
+		$error = 'Заполните оба поля';
+	} elseif (!ctype_digit($rows) || !ctype_digit($cols)) {
+		$error = 'Введите только целые положительные числа';
+	} else {
+		$rowsInt = (int)$rows;
+		$colsInt = (int)$cols;
+		if ($rowsInt <= 0 || $colsInt <= 0) {
+			$error = 'Числа должны быть больше нуля';
+		} else {
+			$showTable = true;
+		}
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -74,5 +73,6 @@ if ($isSubmitted) {
 			<?php } ?>
 		</table>
 	<?php } ?>
+	<p><a href="index.php">Назад</a></p>
 </body>
 </html>
