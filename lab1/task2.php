@@ -7,19 +7,19 @@ $error = '';
 $isSubmitted = isset($_GET['n']) || isset($_GET['m']);
 
 if ($isSubmitted) {
-    if ($n === '' || $m === '') {
-        $error = 'Заполните оба поля';
-    } elseif (!ctype_digit($n) || !ctype_digit($m)) {
-        $error = 'Введите целые числа';
-    } else {
-        $nInt = (int)$n;
-        $mInt = (int)$m;
-        if ($nInt <= 0 || $mInt <= 0) {
-            $error = 'Числа должны быть больше нуля';
-        } else {
-            $showResult = true;
-        }
-    }
+	if ($n === '' || $m === '') {
+		$error = 'Заполните оба поля';
+	} elseif (!ctype_digit($n) || !ctype_digit($m)) {
+		$error = 'Введите целые числа';
+	} else {
+		$nInt = (int)$n;
+		$mInt = (int)$m;
+		if ($nInt <= 0 || $mInt <= 0) {
+			$error = 'Числа должны быть больше нуля';
+		} else {
+			$showResult = true;
+		}
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -63,5 +63,6 @@ if ($isSubmitted) {
 			<p><?= implode(', ', $found) ?></p>
 		<?php } ?>
 	<?php } ?>
+	<p><a href="index.php">Назад</a></p>
 </body>
 </html>
