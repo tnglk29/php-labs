@@ -23,7 +23,7 @@ $text3 = $_GET['text3'] ?? '';
 			<input type="text" name="text1" value="<?= htmlspecialchars($text1) ?>" style="width: 300px;">
 			<button type="submit">Исправить</button>
 		</form>
-		<?php if ($text1 !== '') { ?>
+				<?php if ($text1 !== '') { ?>
 			<?php if (mb_substr($text1, -1) !== '.') { ?>
 				<p style="color:red;">Текст должен заканчиваться точкой!</p>
 			<?php } else { ?>
