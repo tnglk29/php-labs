@@ -34,7 +34,6 @@ if ($snils !== '') {
 		$number = substr($clean, 0, 9);
 		$control = (int)substr($clean, 9, 2);
 
-		// Сначала проверяем порог!
 		if ((int)$number <= 1001998) {
 			echo "<p style='color: orange;'>Для номеров до 001-001-998 проверка не проводится.</p>";
 		} else {
@@ -59,10 +58,6 @@ if ($snils !== '') {
 			<?php } ?>
 		<?php } ?>
 	<?php } ?>
-</body>
-</html>
-    <?php } ?>
-
-    <p><a href="index.php">← Назад</a></p>
+	<p><a href="index.php">Назад</a></p>
 </body>
 </html>
