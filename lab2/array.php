@@ -16,7 +16,7 @@ if (isset($_GET['n']) || isset($_GET['min']) || isset($_GET['max'])) {
 		$maxF = (float)$max;
 		if ($nInt <= 0) {
 			$error = 'n должно быть больше 0';
-		} elseif ($minF > $maxF) { // Разрешаем равно!
+		} elseif ($minF > $maxF) {
 			$error = 'Нижняя граница не может быть больше верхней';
 		} else {
 			$show = true;
@@ -54,7 +54,6 @@ if (isset($_GET['n']) || isset($_GET['min']) || isset($_GET['max'])) {
 			<?php
 			$arr = [];
 			for ($i = 0; $i < $nInt; $i++) {
-				// Генерация без потери точности (дробим на центы)
 				$randInt = rand($minF * 100, $maxF * 100);
 				$arr[] = $randInt / 100;
 			}
